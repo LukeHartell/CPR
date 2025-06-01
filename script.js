@@ -72,7 +72,7 @@ function buildCalendar(date) {
     daysContainer.className = 'calendar-grid';
 
 
-    const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    const dayNames = ['Man','Tirs','Ons','Tors','Fre','Lør','Søn'];
     dayNames.forEach(name => {
         const el = document.createElement('div');
         el.textContent = name;
@@ -81,7 +81,7 @@ function buildCalendar(date) {
 
     const year = date.getFullYear();
     const month = date.getMonth();
-    const firstDay = new Date(year, month, 1).getDay();
+    const firstDay = new Date(year, month, 0).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
 
 
@@ -163,7 +163,7 @@ function generateNumbers(date) {
                 const idx = Math.floor(((last2 - 1) / 2)) % 3;
                 odd[idx].push(full);
             } else {
-                const idx = Math.floor(((last2 - 2) / 2)) % 3;
+                const idx = Math.floor(last2 / 2) % 3;
                 even[idx].push(full);
             }
         }
@@ -177,10 +177,10 @@ function buildTable(odd, even) {
     const thead = document.createElement('thead');
     let tr = document.createElement('tr');
     const oddTh = document.createElement('th');
-    oddTh.textContent = 'Odd';
+    oddTh.textContent = 'Mænd';
     oddTh.colSpan = 3;
     const evenTh = document.createElement('th');
-    evenTh.textContent = 'Even';
+    evenTh.textContent = 'Kvinder';
     evenTh.colSpan = 3;
     tr.appendChild(oddTh);
     tr.appendChild(evenTh);
