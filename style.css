@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #121212;
+    color: #eee;
+}
+#monthSelect,
+#yearSelect,
+button,
+select {
+    background-color: #333;
+    color: #eee;
+    border: 1px solid #555;
+    padding: 4px 6px;
+    margin: 0 2px;
+}
+.selectors {
+    margin-top: 10px;
+}
+#calendar {
+    margin-top: 20px;
+}
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 40px);
+    gap: 5px;
+    text-align: center;
+}
+.day {
+    padding: 5px;
+    cursor: pointer;
+}
+.day:hover {
+    background-color: #333;
+}
+.day.selected {
+    background-color: #555;
+}
+#results {
+    margin-top: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #555;
+    padding: 4px 6px;
+    text-align: center;
+}
+tbody tr:nth-child(even) td {
+    background-color: #1e1e1e;
+}
