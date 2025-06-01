@@ -4,6 +4,23 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+
+    background-color: #121212;
+    color: #eee;
+}
+#monthSelect,
+#yearSelect,
+button,
+select {
+    background-color: #333;
+    color: #eee;
+    border: 1px solid #555;
+    padding: 4px 6px;
+    margin: 0 2px;
+}
+.selectors {
+    margin-top: 10px;
+
 }
 #calendar {
     margin-top: 20px;
@@ -24,21 +41,26 @@ body {
     cursor: pointer;
 }
 .day:hover {
-    background-color: #eee;
+    background-color: #333;
 }
 .day.selected {
-    background-color: #b6d4fe;
+    background-color: #555;
+
 }
 #results {
     margin-top: 20px;
 }
 
-#results ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
-    max-height: 200px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    width: 200px;
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #555;
+    padding: 4px 6px;
+    text-align: center;
+}
+tbody tr:nth-child(even) td {
+    background-color: #1e1e1e;
 }
