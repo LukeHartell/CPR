@@ -4,6 +4,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+
     background-color: #121212;
     color: #eee;
 }
@@ -19,6 +20,7 @@ select {
 }
 .selectors {
     margin-top: 10px;
+
 }
 #calendar {
     margin-top: 20px;
@@ -43,10 +45,12 @@ select {
 }
 .day.selected {
     background-color: #555;
+
 }
 #results {
     margin-top: 20px;
 }
+
 
 table {
     border-collapse: collapse;

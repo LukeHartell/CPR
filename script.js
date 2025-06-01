@@ -1,5 +1,6 @@
 const calendarEl = document.getElementById('calendar');
 const resultsEl = document.getElementById('results');
+
 const monthSelect = document.getElementById('monthSelect');
 const yearSelect = document.getElementById('yearSelect');
 
@@ -41,6 +42,7 @@ function buildCalendar(date) {
     monthSelect.value = date.getMonth();
     yearSelect.value = date.getFullYear();
 
+
     const header = document.createElement('div');
     header.className = 'calendar-header';
     const prevBtn = document.createElement('button');
@@ -49,6 +51,7 @@ function buildCalendar(date) {
     nextBtn.textContent = '>';
     const title = document.createElement('div');
     title.textContent = date.toLocaleString('default', { month: 'long', year: 'numeric' });
+
 
     prevBtn.addEventListener('click', () => {
         date.setMonth(date.getMonth() - 1);
@@ -61,11 +64,13 @@ function buildCalendar(date) {
 
     header.appendChild(prevBtn);
     header.appendChild(title);
+
     header.appendChild(nextBtn);
     calendarEl.appendChild(header);
 
     const daysContainer = document.createElement('div');
     daysContainer.className = 'calendar-grid';
+
 
     const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
     dayNames.forEach(name => {
@@ -79,10 +84,14 @@ function buildCalendar(date) {
     const firstDay = new Date(year, month, 1).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
 
+
+    // Fill empty cells before first day
     for (let i = 0; i < firstDay; i++) {
         daysContainer.appendChild(document.createElement('div'));
     }
 
+
+    // Days
     for (let d = 1; d <= daysInMonth; d++) {
         const dayEl = document.createElement('div');
         dayEl.className = 'day';
@@ -92,6 +101,7 @@ function buildCalendar(date) {
             document.querySelectorAll('.day.selected').forEach(e => e.classList.remove('selected'));
             dayEl.classList.add('selected');
             showResults();
+
         });
         daysContainer.appendChild(dayEl);
     }
